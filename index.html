@@ -13,23 +13,29 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
     />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="assets/animate.css/animate.min.css">
     <title>Facebit</title>
   </head>
   <body>
     <header>
-      <nav class="nav">
-        <section class="nav-left content-center">
+      <section class="rightBar--editIcon content-center">
+        <i class="fas fa-edit fa-xl"></i>
+      </section>
+      <nav class="nav animate__animated animate__flipInY">
+        <section class="nav-left">
           <img
             src="assets/images/facebooklogo.svg"
             class="nav-left--fbLogo"
             alt="facebook logo"
           />
+          <section class="nav-left--inputField content-center">
           <img src="assets/feather-icons/search.svg" class="fas fa-search" id="nav-left--search"></img>
           <input
             type="text"
             class="nav-left--input"
             placeholder="Search Facebook"
           />
+        </section>
         </section>
         <section class="nav-middle">
           <div class="nav-middle-icon-wrap nav-middle-icon-wrap-home content-center">
@@ -83,7 +89,7 @@
       </nav>
     </header>
     <main class='main'>
-        <aside class="main-leftBar">
+        <aside class="main-leftBar animate__animated animate__flipInY animate-delay">
               <section class="main-leftBar--wrap">
     
              <section class="leftBar--container">
@@ -166,7 +172,9 @@
                <div class="myDay-card--me__imgWrap"><img src="assets/images/profile.jpeg" alt="my profile" class='myDay-card--me__img'></div>
                
                <div class="myDay-card--me__textBox">Create Story</div>
+               <div class="myDay-card--me__btnWrap content-center">
                <span class="myDay-card--me__btn content-center"><img src="assets/feather-icons/plus.svg" alt="plus svg"></span>
+              </div>
              </section>
 
       
@@ -237,6 +245,7 @@
                     <i class="fas fa-plus-square createRoom-card--btnIcon" ></i>
                     <span class="createRoom-card--btnText">Create Room</span>                   
                   </section>
+                  <section class="createRoom-card--otherUserWrap">
                   <div class="createRoom-card--otherUserWrap"><img src="assets/images/profiles/profile1.jpeg" alt="user profile" class="createRoom-card--otherUser mini-round-photo">
                   <span class='createRoom-card--otherUser__activeIndicator'></span></div>
                   <div class="createRoom-card--otherUserWrap"><img src="assets/images/profiles/profile2.jpeg" alt="user profile" class="createRoom-card--otherUser mini-round-photo">
@@ -256,7 +265,23 @@
                   <div class="createRoom-card--otherUserWrap"><img src="assets/images/profiles/profile9.jpeg" alt="user profile" class="createRoom-card--otherUser mini-round-photo">
                     <span class='createRoom-card--otherUser__activeIndicator'></span></div>
                   <div class="createRoom-card--otherUserWrap"><img src="assets/images/profiles/profile10.jpeg" alt="user profile" class="createRoom-card--otherUser mini-round-photo">
-                    <span class='createRoom-card--otherUser__activeIndicator'></span></div>                          
+                    <span class='createRoom-card--otherUser__activeIndicator'></span></div>
+                  <div class="createRoom-card--otherUserWrap"><img src="assets/images/profiles/profile11.jpeg" alt="user profile" class="createRoom-card--otherUser mini-round-photo">
+                    <span class='createRoom-card--otherUser__activeIndicator'></span></div>
+                  <div class="createRoom-card--otherUserWrap"><img src="assets/images/profiles/profile12.jpeg" alt="user profile" class="createRoom-card--otherUser mini-round-photo">
+                    <span class='createRoom-card--otherUser__activeIndicator'></span></div>
+                  <div class="createRoom-card--otherUserWrap"><img src="assets/images/profiles/profile13.jpeg" alt="user profile" class="createRoom-card--otherUser mini-round-photo">
+                    <span class='createRoom-card--otherUser__activeIndicator'></span></div>
+                  <div class="createRoom-card--otherUserWrap"><img src="assets/images/profiles/profile14.jpeg" alt="user profile" class="createRoom-card--otherUser mini-round-photo">
+                    <span class='createRoom-card--otherUser__activeIndicator'></span></div>
+                  <div class="createRoom-card--otherUserWrap"><img src="assets/images/profiles/profile15.webp" alt="user profile" class="createRoom-card--otherUser mini-round-photo">
+                    <span class='createRoom-card--otherUser__activeIndicator'></span></div>
+                  <div class="createRoom-card--otherUserWrap"><img src="assets/images/profiles/profile16.jpeg" alt="user profile" class="createRoom-card--otherUser mini-round-photo">
+                    <span class='createRoom-card--otherUser__activeIndicator'></span></div>
+                  <div class="createRoom-card--otherUserWrap"><img src="assets/images/profiles/profile17.jpeg" alt="user profile" class="createRoom-card--otherUser mini-round-photo">
+                    <span class='createRoom-card--otherUser__activeIndicator'></span></div>      
+                    
+                  </section>                        
              <section class="createRoom-card--arrowBtn content-center">
               <i class="fas fa-chevron-right" style='color: var(--moderate-grey);'></i>
              </section>
@@ -510,10 +535,7 @@
         </section>
         </section>
    
-        <aside class="main-rightBar">
-          <section class="rightBar--editIcon content-center">
-            <i class="fas fa-edit fa-xl"></i>
-          </section>
+        <aside class="main-rightBar animate__animated animate__flipInY animate-delay">
           <section class="main-rightBar--wrap">
             <section class="rightBar--birthdayCardWrap">
                 <section class="card rightBar--birthdayCard">

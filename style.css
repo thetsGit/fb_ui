@@ -24,6 +24,26 @@
   --border-grey: 1px solid rgba(0, 0, 0, 0.2);
   --danger: #f02849;
 }
+@keyframes backInDown {
+  0% {
+    -webkit-transform: translateY(-1200px) scale(0.7);
+    transform: translateY(-1200px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    -webkit-transform: translateY(0px) scale(0.7);
+    transform: translateY(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 body {
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -96,6 +116,9 @@ hr {
   height: 1.5rem;
   object-fit: cover;
 }
+.animate-delay {
+  animation-delay: 1s;
+}
 img {
   max-width: 100%;
 }
@@ -115,12 +138,20 @@ body {
   width: 100%;
   z-index: 10;
 }
+.nav-middle {
+  justify-content: center;
+}
+.nav-left {
+  justify-content: start;
+}
+.nav-right {
+  justify-content: end;
+}
 .nav-middle,
 .nav-right {
   background-color: white;
   display: grid;
   grid-auto-flow: column;
-  justify-content: center;
   align-items: center;
   position: relative;
 }
@@ -193,18 +224,24 @@ body {
 }
 .nav-left {
   position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
 }
 .nav-left--fbLogo {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
 }
+.nav-left--inputField {
+  position: relative;
+}
 .nav-left--input {
-  padding: 0.8rem 3rem;
+  padding: 0.8rem 2rem;
   border-radius: 100px;
   text-decoration: none;
   border: 0;
   background-color: var(--light-grey);
+  width: 100%;
 }
 .nav-left--input:focus {
   outline: none;
@@ -216,8 +253,8 @@ body {
 }
 #nav-left--search {
   position: absolute;
-  left: 4.5rem;
-  opacity: 0.7;
+  left: 0.5rem;
+  opacity: 0.5;
 }
 .main {
   display: grid;
@@ -245,9 +282,14 @@ body {
   grid-gap: 1rem;
   width: 93%;
   margin: 0 auto;
+  position: relative;
 }
 .main-middleContent--wrap > * {
   width: 100%;
+  animation-name: backInDown;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
 }
 .myDay {
   height: 12.5rem;
@@ -342,10 +384,14 @@ body {
   z-index: 3;
   cursor: pointer;
 }
-.myDay-card--me__btn {
+.myDay-card--me__btnWrap {
   position: absolute;
   top: 132px;
-  left: 38px;
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+}
+.myDay-card--me__btn {
   border-radius: 50%;
   width: 2.3rem;
   height: 2.3rem;
@@ -438,21 +484,28 @@ hr {
   letter-spacing: 0.05rem;
 }
 .createRoom-card {
-  overflow: hidden;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   position: relative;
+  overflow: hidden;
 }
-.createRoom-card > * {
+/* .createRoom-card > * {
   flex-shrink: 0;
-}
+} */
 .createRoom-card--button {
   border-radius: 100px;
   padding: 0.5rem;
   background-color: #fff;
   border: 2px solid rgba(65, 142, 242, 0.1);
-  width: 25%;
   margin-right: 0.5rem;
   cursor: pointer;
+}
+.createRoom-card--otherUserWrap {
+  display: flex;
+  overflow: hidden;
+}
+.createRoom-card--otherUserWrap > * {
+  flex-shrink: 0;
 }
 .createRoom-card--button:hover {
   background-color: var(--light-grey);
@@ -732,8 +785,8 @@ hr {
   margin-bottom: 0.5rem;
 }
 .sponsor__img {
-  width: 8rem;
-  height: 8rem;
+  width: max(6rem, 6.4vw);
+  height: max(6rem, 6.4vw);
   object-fit: cover;
   border-radius: var(--card-borderRadius);
   object-position: center;
@@ -798,7 +851,6 @@ hr {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 0.8rem;
-  /* justify-items: center; */
   align-items: center;
 }
 .rightbar--yourPage__content > img {
@@ -878,4 +930,66 @@ hr {
   height: 3.5rem;
   padding: 0 0.5rem;
   cursor: disabled;
+}
+@media (max-width: 1400px) {
+  .main {
+    grid-template-columns: 19% 50% 25%;
+  }
+  .nav {
+    grid-template-columns: 23% 50% 27%;
+  }
+}
+@media (max-width: 1250px) {
+  .main-leftBar {
+    display: none;
+  }
+  .nav-left {
+    display: none;
+  }
+  .main,
+  .nav {
+    grid-template-columns: auto 290px;
+  }
+  .nav-middle {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+@media (max-width: 830px) {
+  :root {
+    font-size: 14px;
+  }
+  .myDay-card--me__btnWrap {
+    top: 117px;
+  }
+  .main,
+  .nav {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-right,
+  .main-rightBar {
+    display: none;
+  }
+}
+@media (max-width: 450px) {
+  .myDay {
+    display: flex;
+    overflow: hidden;
+  }
+  .actionBox-btnsBox,
+  .actionBox > hr {
+    display: none;
+  }
+  .actionBox-inputField {
+    padding: 0;
+  }
+  .myDay-arrow {
+    right: 0;
+  }
+  .myDay-card {
+    flex-shrink: 0;
+    width: 6rem;
+  }
 }
