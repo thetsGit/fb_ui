@@ -956,6 +956,17 @@ hr {
   }
 }
 @media (max-width: 830px) {
+  body {
+    background-color: #dadde1;
+  }
+  .nav-middle {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    height: 5rem;
+    align-items: flex-end;
+  }
+  .actionBox {
+    order: -1;
+  }
   :root {
     font-size: 14px;
   }
@@ -968,12 +979,43 @@ hr {
     margin: 0;
     padding: 0;
   }
+  .main {
+    margin-top: 0.5rem;
+  }
   .nav-right,
   .main-rightBar {
     display: none;
   }
+  .myDay-arrow {
+    right: -5px;
+  }
+  .rightBar--editIcon {
+    display: none !important;
+  }
 }
 @media (max-width: 450px) {
+  .myDay-card--me__btnWrap {
+    top: 98px;
+  }
+  .myDay-arrow {
+    display: none !important;
+  }
+  .myDay {
+    background-color: #fff;
+    box-shadow: var(--shadow);
+    padding: 0.8rem 1rem;
+  }
+  .main {
+    margin: 0;
+    grid-gap: 0rem;
+  }
+  .main-middleContent--wrap {
+    width: 100%;
+    padding: 0;
+  }
+  .card {
+    border-radius: 0;
+  }
   .myDay {
     display: flex;
     overflow: hidden;
@@ -984,9 +1026,6 @@ hr {
   }
   .actionBox-inputField {
     padding: 0;
-  }
-  .myDay-arrow {
-    right: 0;
   }
   .myDay-card {
     flex-shrink: 0;
